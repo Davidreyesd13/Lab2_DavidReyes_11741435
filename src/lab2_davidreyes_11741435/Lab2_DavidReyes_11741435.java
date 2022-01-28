@@ -22,12 +22,12 @@ public class Lab2_DavidReyes_11741435 {
                 case 1:
                     System.out.println("Ingrese el nombre cientifico");
                     String nombrec = sc.next();
-                    nombrec.toLowerCase();
+                    nombrec = nombrec.toLowerCase();
                     for (Object x : lista) {
                         if (x instanceof Animal) {
                             if (((Animal) x).nombrec.contentEquals(nombrec)) {
-                    System.out.println("Ingrese el nombre cientifico");
-                     nombrec = sc.next();            
+                                System.out.println("Ingrese el nombre cientifico");
+                                nombrec = sc.next();
                             }
                         }
                     }
@@ -53,25 +53,25 @@ public class Lab2_DavidReyes_11741435 {
                 case 2:
 
                     System.out.println("1.mostrar lista completa\n2.imprimir por nombre cientifico");
-                    int imp=sc.nextInt();
+                    int imp = sc.nextInt();
                     switch (imp) {
                         case 1:
                             for (Object x : lista) {
-                        System.out.println(lista.indexOf(x) + "." + x);
-                    }
+                                System.out.println(lista.indexOf(x) + "." + x);
+                            }
                             break;
                         case 2:
                             for (Object x : lista) {
                                 if (x instanceof Animal) {
-                                    System.out.println(lista.indexOf(x)+"."+((Animal) x).nombrec);
+                                    System.out.println(lista.indexOf(x) + "." + ((Animal) x).nombrec);
                                 }
                             }
                             break;
                         default:
-                            
+
                             System.out.println("Opcion no valida");
                     }
-                    
+
                     break;
                 case 3:
                     for (Object x : lista) {
@@ -80,14 +80,28 @@ public class Lab2_DavidReyes_11741435 {
                     break;
                 case 4:
                     for (Object x : lista) {
-                        System.out.println(lista.indexOf(x) + "." + x);
+                        if (x instanceof Animal) {
+                            System.out.println(((Animal) x).nombrec+".");
+                        }
                     }
                     System.out.println("Ingrese el animal que va a eliminar");
-                    int rev = sc.nextInt();
-                    lista.remove(rev);
+                    String enc = sc.next();
+                    
                     break;
                 case 5:
-
+                    for (Object x : lista) {
+                        System.out.println(lista.indexOf(x) + "." + x);
+                    }
+                    System.out.println("Que animal desea alimentar");
+                    int pos=sc.nextInt();
+                    System.out.println("Animal que desea sacrificar");
+                    int posa=sc.nextInt();
+                    ((Animal)lista.get(pos)).setVida(((Animal)lista.get(pos)).getVida()+((Animal)lista.get(posa)).getVida());
+                    lista.remove(posa);
+                    System.out.println(((Animal)lista.get(pos)).nombrec+" Fue Alimentado");
+                    for (Object object : lista) {
+                        System.out.println(lista.indexOf(object)+"."+object);
+                    }
                     break;
                 case 0:
                     System.exit(0);
