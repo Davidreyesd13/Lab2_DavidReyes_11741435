@@ -2,8 +2,7 @@ package lab2_davidreyes_11741435;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import javax.sound.sampled.Clip;
-import sun.security.util.AlgorithmDecomposer;
+
 
 public class Lab2_DavidReyes_11741435 {
 
@@ -25,7 +24,7 @@ public class Lab2_DavidReyes_11741435 {
                     nombrec = nombrec.toLowerCase();
                     for (Object x : lista) {
                         if (x instanceof Animal) {
-                            if (((Animal) x).nombrec.contentEquals(nombrec)) {
+                            if (((Animal) x).nombre.contentEquals(nombrec)) {
                                 System.out.println("Ingrese el nombre cientifico");
                                 nombrec = sc.next();
                             }
@@ -74,19 +73,42 @@ public class Lab2_DavidReyes_11741435 {
 
                     break;
                 case 3:
-                    for (Object x : lista) {
-                        System.out.println(lista.indexOf(x) + "." + x);
-                    }
-                    break;
-                case 4:
-                    for (Object x : lista) {
+                     for (Object x : lista) {
                         if (x instanceof Animal) {
-                            System.out.println(((Animal) x).nombrec+".");
+                            System.out.println(((Animal) x).nombre);
                         }
                     }
                     System.out.println("Ingrese el animal que va a eliminar");
                     String enc = sc.next();
+                    enc=enc.toLowerCase();
+                    for (Object x : lista) {
+                        if (x instanceof Animal) {
+                            if (((Animal) x).nombre.equals(enc)) {
+                                lista.remove(x);
+                                System.out.println("Se elimino"+ ((Animal) x).nombrec);
+                                break;
+                            }
+                        }
+                    }
                     
+                    
+                    break;
+                case 4:
+                   for (Object x : lista) {
+                        if (x instanceof Animal) {
+                            System.out.println(((Animal) x).nombrec+".");
+                        }
+                    }
+                    System.out.println("Ingrese el animal que va a modificar");
+                    String mnc = sc.next();
+                    for (Object x : lista) {
+                        if (x instanceof Animal) {
+                            if (((Animal) x).nombre.contentEquals(mnc)) {
+                                System.out.println("Ingrese el nombre cientifico");
+                                nombrec = sc.next();
+                            }
+                        }
+                    }
                     break;
                 case 5:
                     for (Object x : lista) {

@@ -80,7 +80,7 @@ int vida;
 
     @Override
     public String toString() {
-        return "Animal{" + "Nombre=" + nombre + ", nombrec=" + nombrec + ", Habitat=" + Habitat + ", Alimentacion=" + Alimentacion + ", Descrasgos=" + Descrasgos + ", geografica=" + geografica + ", vida=" + vida + '}';
+        return "Animal{" + "Nombre Cientifico=" + nombre + ", Nombre Comun=" + nombrec + ", Habitat=" + Habitat + ", Alimentacion=" + Alimentacion + ", Descrasgos=" + Descrasgos + ", geografica=" + geografica + ", vida=" + vida + '}';
     }
 
 
