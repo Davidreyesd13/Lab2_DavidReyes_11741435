@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Lab2_DavidReyes_11741435 {
-    
+
     public static void main(String[] args) {
         Animal al = new Animal();
         Scanner sc = new Scanner(System.in);
@@ -49,7 +49,7 @@ public class Lab2_DavidReyes_11741435 {
                     System.out.println("Animal agregado");
                     break;
                 case 2:
-                    
+
                     System.out.println("1.mostrar lista completa\n2.imprimir por nombre cientifico\n3.Posicion de la lista");
                     int imp = sc.nextInt();
                     switch (imp) {
@@ -66,71 +66,17 @@ public class Lab2_DavidReyes_11741435 {
                             }
                             break;
                         case 3:
-                            System.out.println("1.Nombre cientifico\n2.Nombre comun\n3.habitad\n4.Comida\n5.descripcion\n6.Ubicacion\n7.La vida");
-                            System.out.println("Ingrese la posicion de la lista");
-                            int posl = sc.nextInt();
-                            switch (posl) {
-                                case 1:
-                                    for (Object j : lista) {
-                                        if (j instanceof Animal) {
-                                            System.out.println(lista.indexOf(j) + "." + ((Animal) j).nombre);
-                                        }
-                                    }
-                                    break;
-                                case 2:
-                                    for (Object f : lista) {
-                                        
-                                        if (f instanceof Animal) {
-                                            System.out.println(lista.indexOf(f) + "." + ((Animal) f).nombrec);
-                                        }
-                                    }
-                                    break;
-                                case 3:
-                                    for (Object i : lista) {
-                                        if (i instanceof Animal) {
-                                            System.out.println(lista.indexOf(i) + "." + ((Animal) i).Habitat);
-                                        }
-                                    }
-                                    break;
-                                case 4:
-                                    for (Object a : lista) {
-                                        if (a instanceof Animal) {
-                                            System.out.println(lista.indexOf(a) + "." + ((Animal) a).Alimentacion);
-                                        }
-                                    }
-                                    break;
-                                case 5:
-                                    for (Object g : lista) {
-                                        if (g instanceof Animal) {
-                                            System.out.println(lista.indexOf(g) + "." + ((Animal) g).Descrasgos);
-                                        }
-                                    }
-                                    break;
-                                case 6:
-                                    for (Object i : lista) {
-                                        if (i instanceof Animal) {
-                                            System.out.println(lista.indexOf(i) + "." + ((Animal) i).geografica);
-                                        }
-                                    }
-                                    break;
-                                case 7:
-                                    for (Object i : lista) {
-                                        if (i instanceof Animal) {
-                                            System.out.println(lista.indexOf(i) + "." + ((Animal) i).vida);
-                                        }
-                                    }
-                                    break;
-                                default:
-                                    System.out.println("Opcion no valida");
-                                    break;
+                            for (int i = 0; i < lista.size(); i++) {
+                                System.out.println(i + ". " + lista.get(i).nombre);
                             }
-                            
+                            System.out.println("Ingrese la posicion");
+                            int posi = sc.nextInt();
+                            System.out.println(lista.get(posi));
                             break;
                         default:
-                            
                             System.out.println("Opcion no valida");
                     }
-                    
+
                     break;
                 case 3:
                     for (Object x : lista) {
@@ -150,7 +96,7 @@ public class Lab2_DavidReyes_11741435 {
                             }
                         }
                     }
-                    
+
                     break;
                 case 4:
                     for (Object x : lista) {
@@ -191,7 +137,7 @@ public class Lab2_DavidReyes_11741435 {
                                             break;
                                         case 3:
                                             System.out.println("Ingrese el Habitad");
-                                            habitad=sc.next();
+                                            habitad = sc.next();
                                             lista.get(i).setHabitat(habitad);
                                             break;
                                         case 4:
@@ -201,23 +147,28 @@ public class Lab2_DavidReyes_11741435 {
                                             break;
                                         case 5:
                                             System.out.println("Ingrese los rasgos");
-                                            descrip=sc.next();
+                                            descrip = sc.next();
                                             lista.get(i).setDescrasgos(descrip);
                                             break;
                                         case 6:
                                             System.out.println("Ingrese la ubicacion geografica");
-                                            geo=sc.next();
+                                            geo = sc.next();
                                             lista.get(i).setGeografica(geo);
                                             break;
                                         case 7:
                                             System.out.println("Ingrese la vida");
-                                            vida=sc.nextInt();
+                                            vida = sc.nextInt();
+                                            while (vida <= 0) {
+                                                System.out.println("Ingrese la cantida de vida");
+                                                vida = sc.nextInt();
+                                            }
+                                            lista.get(i).setVida(vida);
                                             break;
                                         default:
                                             System.out.println("Opcion no valida");
                                             break;
                                     }
-                                    
+
                                     break;
                                 case 2:
                                     System.out.println("Ingrese el nombre cientifico");
@@ -254,6 +205,7 @@ public class Lab2_DavidReyes_11741435 {
                                         vida = sc.nextInt();
                                     }
                                     lista.get(i).setVida(vida);
+                                    System.out.println(lista.get(i));
                                     break;
                                 default:
                                     System.out.println("Opcion invalida");
@@ -284,7 +236,7 @@ public class Lab2_DavidReyes_11741435 {
                     break;
             }
         }
-        
+
     }
-    
+
 }
