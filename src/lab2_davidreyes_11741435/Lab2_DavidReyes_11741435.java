@@ -10,9 +10,9 @@ public class Lab2_DavidReyes_11741435 {
         Scanner sc = new Scanner(System.in);
         int opcion;
         ArrayList<Animal> lista = new ArrayList();
-        lista.add(new Animal("pantera", "Pantera", "Selva", "Serpiente", "Peluda,pelo negro,ojos amarillos", "Amazonas", 100));
-        lista.add(new Animal("cocodrilo", "Cocodrilo", "selva", "Pantera", "Tiene cara blanca", "Amazonas", 250));
-        lista.add(new Animal("serpiente", "serpiente de rio", "Selva", "Mono", "Se arrastran", "Amazonas", 75));
+        lista.add(new Animal("pantera", "Pantera", "Selva", "Carne", "Peluda,pelo negro,ojos amarillos", "Amazonas", 100));
+        lista.add(new Animal("cocodrilo", "Cocodrilo", "selva", "Carne", "Tiene cara blanca", "Amazonas", 250));
+        lista.add(new Animal("serpiente", "serpiente de rio", "Selva", "Carne", "Se arrastran", "Amazonas", 75));
         while (true) {
             System.out.println("1.Crear animal\n2.Listar animales\n3.Eliminar animales\n4.Modificar animales\n5.Alimentar animales\n0.Salir");
             opcion = sc.nextInt();
@@ -221,11 +221,15 @@ public class Lab2_DavidReyes_11741435 {
                     int pos = sc.nextInt();
                     System.out.println("Animal que desea sacrificar");
                     int posa = sc.nextInt();
+                    if(lista.get(pos).getAlimentacion().equals("Carne")){
                     ((Animal) lista.get(pos)).setVida(((Animal) lista.get(pos)).getVida() + ((Animal) lista.get(posa)).getVida());
                     lista.remove(posa);
                     System.out.println(((Animal) lista.get(pos)).nombrec + " Fue Alimentado");
                     for (Object object : lista) {
                         System.out.println(lista.indexOf(object) + "." + object);
+                    }}else{
+                        System.out.println("Ya se le dio de comer");
+                        System.out.println("El animal solo come vegetales");
                     }
                     break;
                 case 0:
